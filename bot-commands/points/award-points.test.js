@@ -49,7 +49,7 @@ beforeAll(async () => {
   await PointsService.users.insertMany(mockUsers);
 });
 
-afterEach(async () => {
+beforeEach(async () => {
   jest.clearAllMocks();
   await PointsService.users.deleteMany();
   await PointsService.users.insertMany(mockUsers);
