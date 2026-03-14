@@ -40,7 +40,7 @@ beforeAll(async () => {
     actual.channels.noPointsChannelIds = [IDs.noPointsChannel];
     actual.channels.club40ChannelId = IDs.club40Channel;
     actual.roles.club40Id = IDs.club40Role;
-    actual.databaseURI = database.getUri();
+    // actual.databaseURI = database.getUri();
     return actual;
   });
   awardPoints = require('./award-points-mongo');
