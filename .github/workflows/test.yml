@@ -12,6 +12,4 @@ jobs:
     steps:
       - uses: actions/checkout@v6
       - run: npm install
-      - env:
-          DATABASE_URI: ${{ secrets.DATABASE_URI }}
-        run: DATABASE_URI="$DATABASE_URI" npm run test -- --showSeed --seed=413044273 --maxConcurrency=1 --runInBand
+      - run: npm run test -- --showSeed --seed=413044273 --maxConcurrency=1 --runInBand
