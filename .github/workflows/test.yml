@@ -11,5 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
+      - env:
+          DATABASE_URI: ${{ secrets.DATABASE_URI }}
       - run: npm install
-      - run: npm run test -- --showSeed --seed=413044273 --maxConcurrency=1
+      - run: DATABASE_URI="$DATABASE_URI" npm run test -- --showSeed --seed=413044273 --maxConcurrency=1
