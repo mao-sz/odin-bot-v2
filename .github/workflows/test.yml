@@ -26,6 +26,10 @@ jobs:
           - 5432:5432
     steps:
       - uses: actions/checkout@v6
+      - name: Create database
+        run: psql -h localhost -U workflow_user -c 'CREATE DATABASE "odinbot_test";'
+        env:
+          PGPASSWORD: 'workflow_password'
       - run: npm install
       - run: npm run test
         env:
